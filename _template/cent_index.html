@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>{{campaign_name}}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+		<style type="text/css" media="screen">
+		html, body { height:100%; width: 100%; margin: 0; padding: 0; background-color: #ffffff; text-transform:uppercase; font-family: 'Unica One', Helvetica, sans-serif; }
+		.section {
+			width: 100%;
+			text-align: center;
+			display: none;
+		}
+		.section.active {
+			display: block;
+			padding-bottom: 50px;
+			min-height: 800px;
+
+		    background-image: linear-gradient(45deg, #eee 25%, transparent 25%), linear-gradient(-45deg, #eee 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #eee 75%), linear-gradient(-45deg, transparent 75%, #eee 75%);
+		    background-size: 20px 20px;
+		    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+		}
+		.section.active h1 {
+			background-color: white;
+		}
+		.download {
+		margin: 0;
+		align-items: center;
+		border: 1px solid rgba(29,30,28,.3);
+		border-radius: 8px;
+		display: inline-flex;
+		font-size: 15px;
+		gap: 4px;
+		height: 34px;
+		justify-content: center;
+		line-height: 34px;
+		padding: 0 16px;
+		position: relative;
+		text-decoration: none;
+		vertical-align: middle;
+		white-space: nowrap;
+		width: auto;
+		background-clip: border-box;
+		background-color: #188433;
+		border-color: transparent!important;
+		color: #fff;
+		font-weight: 500;
+		cursor: pointer;
+		}
+		.hidden {
+			display: none;
+		}
+		ul, li { padding: 0; }
+		li {
+			list-style: none;
+			display: flex;
+			justify-content: space-between;
+		}
+		</style>
+		<link href='//fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div class="container ">
+			<div class="row gx-5 justify-content-center">
+				<div class="col-3">
+					<div class="p-4 text-center">
+						<img src="https://www.loveadv.com/wp-content/themes/loveadv/images/love-logo-block.svg" height="115" alt=""/>
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="p-4">
+						<h1>{{campaign_name}}</h1>
+						<div class="d-flex flex-column list-group">
+							<div class="d-flex justify-content-between list-group-item"><span class="text-black-50">Creation date</span> <span class="created">{{created}}</span> </div>
+							<div class="d-flex justify-content-between list-group-item"><span class="text-black-50">Last updated</span> <span class="updated">{{updated}}</span> </div>
+							<div class="d-flex justify-content-between list-group-item"><span class="text-black-50">Total units</span> <span class="text-end">{{html}} html<br>{{gif}} gif</span> </div>
+							<div class="d-flex justify-content-between list-group-item d-none"><span class="text-black-50">ALL ZIPs</span> <a class="btn btn-success" href="download.zip">DOWNLOAD</a></div>
+						</div>
+						<!-- <a class="btn btn-success d-none" href="download.zip">DOWNLOAD</a> -->
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="container">
+			<div class="row justify-content-center">
+			
+				<div class="col-4 p-4">
+					<select id="combobox" class="form-select" name="example" onchange="oncbchanged()">
+						<option value="CENT-0002_300x250" w="300" h="250" src="CENT-0002_300x250/index.html">CENT-0002_300x250</option>
+						<option value="CENT-0002_160x600" w="160" h="600" src="CENT-0002_160x600/index.html">CENT-0002_160x600</option>
+					</select>
+				</div>
+			</div>
+			<script>
+				function oncbchanged()
+				{
+					var combo = document.getElementById('combobox');
+					var selectedOption = combo.options[combo.selectedIndex];
+					var val = selectedOption.value;
+					
+					var src = selectedOption.getAttribute('src');
+					var dw = selectedOption.getAttribute('w');
+					var dh = selectedOption.getAttribute('h');
+
+					var targetOld = document.querySelectorAll('.section.active')[0];
+					var now = Date.now();
+
+					if (src.indexOf('.gif')) {
+
+						targetOld.innerHTML = '<h1 class="display-6 mb-4">'+val+'</h1><iframe src="'+src+'?cb=' + now + '" frameborder="0" width="'+dw+'" height="'+dh+'" scrolling="no" border="0" name="' + now + '"></iframe>';
+					} else {
+						
+						targetOld.innerHTML = '<h1 class="display-6 mb-4">'+val+'</h1><iframe src="'+src+'?cb=' + now + '" frameborder="0" width="100%" height="1000px" scrolling="no" border="0" style="text-align: center" name="' + now + '"></iframe>';
+					}
+				}
+
+
+				setTimeout(oncbchanged, 1000);
+			</script>
+		</div>
+		<div class="section active">
+			
+		</div>
+	</body>
+</html>
