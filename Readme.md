@@ -1,9 +1,22 @@
-# Image Resizer
+# Electron Ad Template
 
-Electron application that allows you to select an image and easily change the width and/or height.
+Electron application that allows you to create ad template.
 
 <div style="display: flex; justify-content: center">
 <img src="./assets/screen.png" width="400" />
+</div>
+
+## Steps to craete ad tempaltes
+
+1. Open the app and input the projects folder where you will edit the banner contents like: html, css, js, and images.
+2. Input the destination folder in `Output Folder`, where you will create the output preview when you are done with the banner sizes.
+3. Input project name in `Campaign Name`.
+4. Click on `Generate` button to create templates for you banners.
+5. When done with your banners, click on the `Preview` button to create preview index html.
+6. Click on the `All Zipz` button to create a downloadale zip for you client.
+
+<div style="display: flex; justify-content: center">
+<img src="./assets/preview.png" width="400" />
 </div>
 
 ## Usage

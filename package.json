@@ -16,7 +16,6 @@
   "dependencies": {
     "fs-extra": "^11.1.0",
     "moment-timezone": "^0.5.40",
-    "resize-img": "^2.0.0",
     "toastify-js": "^1.12.0"
   }
 }
