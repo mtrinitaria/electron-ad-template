@@ -4,48 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-    http-equiv="Content-Security-Policy"
-    content="script-src 'self' 'unsafe-inline'"
-  />
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline'"
+    />
     <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/renderer.js" defer></script>
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/renderer.js" defer></script>
     <title>Electron Ad Template</title>
   </head>
   <body class="bg-teal-700">
     <div
       class="max-w-xl m-auto h-screen flex flex-col align-center justify-center"
     >
-
       <div class="mt-4">
-        <label class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md">Projects Folder:</label>
+        <label
+          class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md"
+          >Projects Folder:</label
+        >
         <input
           type="text"
           id="project-folder"
           class="mt-1 block w-80 m-auto p-3 shadow-sm border-gray-300 rounded-md"
           placeholder="./projects"
-          value="/Library/WebServer/Documents/mykhel/mykhel-portfolio/projects/love"
+          value="/Library/WebServer/Documents/calvin/projects/sources"
         />
       </div>
 
       <div class="mt-4">
-        <label class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md">Output Folder:</label>
+        <label
+          class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md"
+          >Output Folder:</label
+        >
         <input
           type="text"
           id="dest-dir"
           class="mt-1 block w-80 m-auto p-3 shadow-sm border-gray-300 rounded-md"
           placeholder="./dist"
-          value="/Library/WebServer/Documents/mykhel/mykhel-portfolio/dist/love"
+          value="/Library/WebServer/Documents/calvin/projects/outputs"
         />
       </div>
 
       <hr class="mt-4" />
-      
+
       <div class="mt-4">
-        <label class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md">Campaign Name:</label>
+        <label
+          class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md"
+          >Campaign Name:</label
+        >
         <input
           type="text"
           id="campaign-name"
@@ -56,7 +64,10 @@
       </div>
 
       <div class="mt-4">
-        <label class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md">Ad Sizes:</label>
+        <label
+          class="mt-1 block text-white text-center w-80 m-auto py-3 shadow-sm border-gray-300 rounded-md"
+          >Ad Sizes:</label
+        >
         <input
           type="text"
           id="ad-sizes"
@@ -92,8 +103,6 @@
           All Zip
         </button>
       </div>
-
-      
     </div>
   </body>
 </html>
