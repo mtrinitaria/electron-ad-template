@@ -1,14 +1,14 @@
-const form = document.querySelector('#img-form');
-const img = document.querySelector('#img');
-const outputPath = document.querySelector('#output-path');
-const filename = document.querySelector('#filename');
-const heightInput = document.querySelector('#height');
-const widthInput = document.querySelector('#width');
+const form = document.querySelector('#img-form')
+const img = document.querySelector('#img')
+const outputPath = document.querySelector('#output-path')
+const filename = document.querySelector('#filename')
+const heightInput = document.querySelector('#height')
+const widthInput = document.querySelector('#width')
 
 // When done, show message
 ipcRenderer.on('image:done', () =>
   alertSuccess(`Image resized to ${heightInput.value} x ${widthInput.value}`)
-);
+)
 
 function alertSuccess(message) {
   Toastify.toast({
@@ -20,7 +20,7 @@ function alertSuccess(message) {
       color: 'white',
       textAlign: 'center',
     },
-  });
+  })
 }
 
 function alertError(message) {
@@ -33,7 +33,7 @@ function alertError(message) {
       color: 'white',
       textAlign: 'center',
     },
-  });
+  })
 }
 
 document.getElementById('generate').addEventListener('click', () => {
@@ -43,8 +43,8 @@ document.getElementById('generate').addEventListener('click', () => {
     campaignName: document.getElementById('campaign-name').value.trim(),
     destDir: document.getElementById('dest-dir').value.trim(),
     adSizes: document.getElementById('ad-sizes').value.trim(),
-  });
-});
+  })
+})
 
 document.getElementById('preview').addEventListener('click', () => {
   ipcRenderer.send('preview:ad', {
@@ -52,21 +52,22 @@ document.getElementById('preview').addEventListener('click', () => {
     campaignName: document.getElementById('campaign-name').value.trim(),
     destDir: document.getElementById('dest-dir').value.trim(),
     adSizes: document.getElementById('ad-sizes').value.trim(),
-  });
-});
+  })
+})
 
 document.getElementById('all-zip').addEventListener('click', () => {
+  console.log('allzip zip:ad')
   ipcRenderer.send('zip:ad', {
     projectFolder: document.getElementById('project-folder').value.trim(),
     campaignName: document.getElementById('campaign-name').value.trim(),
     destDir: document.getElementById('dest-dir').value.trim(),
     adSizes: document.getElementById('ad-sizes').value.trim(),
-  });
-});
+  })
+})
 
 document.getElementById('project-folder').addEventListener('click', () => {
-  ipcRenderer.send('project-folder:open');
-});
+  ipcRenderer.send('project-folder:open')
+})
 
 ipcRenderer.on('project-folder:close', (filePaths) => {
   console.log('filepaths', filePaths)
@@ -74,8 +75,8 @@ ipcRenderer.on('project-folder:close', (filePaths) => {
 })
 
 document.getElementById('dest-dir').addEventListener('click', () => {
-  ipcRenderer.send('dest-dir:open');
-});
+  ipcRenderer.send('dest-dir:open')
+})
 
 ipcRenderer.on('dest-dir:close', (filePaths) => {
   console.log('filepaths', filePaths)
